@@ -88,11 +88,9 @@ void nextPermutation(vector<int> &num)
 			if (*j < *(j + 1)){
 				/*With [j+1, num.end()-1] already in not ascending order,
 				we reverse it at first.*/
-				printV(num);
 				reverseV(num, j + 1, num.end() - 1);
-				printV(num);
 				/*Just need to swap *j and the first elem bigger than *j.*/
-                VIt lb = myBSearch(j + 1, num.end() - 1, *j);
+				VIt lb = myBSearch(j + 1, num.end() - 1, *j);
 				mySwap(num, j, lb);
 
 				goto L1;
